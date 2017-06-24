@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <meta
+      http-equiv='Content-Security-Policy'
+      content="default-src 'self' data: gap: 'unsafe-eval';                                        script-src   'self' http://localhost:*;                                                    connect-src  'self' https://ikarus512-fccmycdn.herokuapp.com http://localhost:* ws://localhost:*;                                                                        style-src 'self' 'unsafe-inline';                                                            media-src *;                                                                                 img-src 'self' data: content: ;">
+
     <title></title>
 
     <link rel="manifest" href="manifest.json">
@@ -31,7 +36,11 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+    <script src="js/controllers.module.js"></script>
+    <script src="js/controllers/app.js"></script>
+    <script src="js/controllers/playlist.js"></script>
+    <script src="js/controllers/playlists.js"></script>
+    <script src="js/services/rest.js"></script>
   </head>
 
   <body ng-app="starter">

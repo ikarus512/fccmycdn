@@ -1,5 +1,36 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="{{playlistTitle}}">
   <ion-content>
-    <h1>Playlist</h1>
+    <h3>{{playlistTitle}}</h3>
+
+{{data1Keys}}
+
+    <hr />
+    <hr />
+    <!-- //////////////////////////////////////////////////// -->
+
+    <table>
+      <tr>
+        <th ng-repeat="th in data1Keys" style='border:1px solid black;'>
+          {{th}}
+        </th>
+      </tr>
+      <tr ng-repeat="tr in data1">
+        <td
+          ng-show='tr.ver'
+          ng-repeat="td in tr"
+          style='border:1px solid black;'
+          ng-style='tr.ch=="0:00"?{"border-top-width":"3px"}:{}'
+        >
+          {{td}}
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+    <hr />
+    <!-- //////////////////////////////////////////////////// -->
+
+    {{data}}
+
   </ion-content>
 </ion-view>
