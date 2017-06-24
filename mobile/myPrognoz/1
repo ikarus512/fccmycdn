@@ -1,0 +1,5 @@
+ionic start myPrognoz sidemenu --type ionic1
+ionic serve
+ionic cordova run android
+https://view.ionic.io
+
