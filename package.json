@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ikarus512/fccmycdn#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
   }
 }
