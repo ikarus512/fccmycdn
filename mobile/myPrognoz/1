@@ -3,3 +3,6 @@ ionic serve
 ionic cordova run android
 https://view.ionic.io
 
+  debug:
+  ionic cordova plugin add cordova-plugin-crosswalk-webview   ### needed only for debug (chrome://inspect)
+  ionic cordova plugin rm  cordova-plugin-crosswalk-webview
