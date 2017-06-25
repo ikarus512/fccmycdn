@@ -4,7 +4,7 @@ angular.module('starter.services', [])
   var serverUrl = (window.cordova) ?
     'https://ikarus512-fccmycdn.herokuapp.com/api/myPrognoz/':
     'http://localhost:5000/api/myPrognoz/' ;
-  serverUrl='https://ikarus512-fccmycdn.herokuapp.com/api/myPrognoz/';
+  // serverUrl='https://ikarus512-fccmycdn.herokuapp.com/api/myPrognoz/';
   return {
     get: function(area) {
       return $http({
