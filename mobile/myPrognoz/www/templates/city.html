@@ -1,23 +1,25 @@
-<ion-view view-title="{{playlistTitle}}">
+<ion-view view-title='{{cityTitle}}'>
   <ion-content>
-    <h3>{{playlistTitle}}</h3>
+    <h3>{{cityTitle}}</h3>
 
-{{data1Keys}}
+    {{data}}
 
-    <hr />
-    <hr />
     <!-- //////////////////////////////////////////////////// -->
+
+    <my-calendar></my-calendar>
+
+    <hr /> <!-- //////////////////////////////////////////////////// -->
 
     <table>
       <tr>
-        <th ng-repeat="th in data1Keys" style='border:1px solid black;'>
+        <th ng-repeat='th in dataKeys' style='border:1px solid black;'>
           {{th}}
         </th>
       </tr>
-      <tr ng-repeat="tr in data1">
+      <tr ng-repeat='tr in data'>
         <td
           ng-show='tr.ver'
-          ng-repeat="td in tr"
+          ng-repeat='td in tr'
           style='border:1px solid black;'
           ng-style='tr.ch=="0:00"?{"border-top-width":"3px"}:{}'
         >
@@ -26,11 +28,7 @@
       </tr>
     </table>
 
-    <hr />
-    <hr />
     <!-- //////////////////////////////////////////////////// -->
-
-    {{data}}
 
   </ion-content>
 </ion-view>

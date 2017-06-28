@@ -1,0 +1,27 @@
+<!--
+/* file: my-calendar.html */
+/*!
+ * Copyright 2017 ikarus512
+ * https://github.com/ikarus512/fccmycdn.git
+ */
+-->
+
+<div>
+  <h3>{{today.month}} {{today.date}} - {{today.day}} - {{today.h}}:{{today.m}} </h3>
+  <table>
+    <tr style='background-color:#ddd;'>
+      <th style='border:1px solid black;'>Mo</th>
+      <th style='border:1px solid black;'>Tu</th>
+      <th style='border:1px solid black;'>We</th>
+      <th style='border:1px solid black;'>Th</th>
+      <th style='border:1px solid black;'>Fr</th>
+      <th style='border:1px solid black;'>Sa</th>
+      <th style='border:1px solid black;'>Su</th>
+    </tr>
+    <tr ng-repeat='week in weeks'>
+      <td ng-repeat='d in week' style='padding:2px;text-align:right;border:1px solid black;{{d.s1}};{{d.s2}};'>
+        {{d.d}}
+      </td>
+    </tr>
+  </table>
+</div>

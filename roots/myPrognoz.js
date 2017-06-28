@@ -9,7 +9,7 @@ router
 .all(/^\/myPrognoz.*/, myEnableCORS)
 .get(/^\/myPrognoz.*/, function (req, res) {
   var searchstr = req.url.replace(/^\/myPrognoz\w*\//,''),
-    detailes = req.url.match(/^\/myPrognozDetails/,''),
+    details = req.url.match(/^\/myPrognozDetails/,''),
     arr_temperature,
     arr_precip_val,
     arr_precip_ver,
@@ -48,7 +48,7 @@ router
 
   function processData(res, data) {
     try {
-      // data = require('./1.js'),
+      // extract data
       arr_temperature= extractVal(data, 'arr_temperature');
       arr_precip_val = extractVal(data, 'arr_precip_val');
       arr_precip_ver = extractVal(data, 'arr_precip_ver');
@@ -57,22 +57,30 @@ router
       arr_humidity   = extractVal(data, 'arr_humidity');
       arr_phenomenon_name   = extractVal(data, 'arr_phenomenon_name');
 
-
+      // extract dates
+      var x = arr_precip_val.map((el)=>{ return el.x; });
+      // Filter out absent dates
+      arr_temperature = arr_temperature.filter((el)=>{ return x.some((xel)=>{ return xel===el.x; }); });
+      arr_precip_ver = arr_precip_ver.filter((el)=>{ return x.some((xel)=>{ return xel===el.x; }); });
+      arr_wind_speed = arr_wind_speed.filter((el)=>{ return x.some((xel)=>{ return xel===el.x; }); });
+      arr_pressure = arr_pressure.filter((el)=>{ return x.some((xel)=>{ return xel===el.x; }); });
+      arr_humidity = arr_humidity.filter((el)=>{ return x.some((xel)=>{ return xel===el.x; }); });
+      arr_phenomenon_name = arr_phenomenon_name.filter((el)=>{ return x.some((xel)=>{ return xel===el.x; }); });
 
       var result = {
-        searchstr,
-        arr_temperature,
-        arr_precip_val,
-        arr_precip_ver,
-        arr_wind_speed,
-        // arr_pressure,
-        // arr_humidity,
-        // arr_phenomenon_name,
+        x: x,
+        t: arr_temperature.map((el)=>{ return el.y; }),
+        val: arr_precip_val.map((el)=>{ return el.y; }),
+        ver: arr_precip_ver.map((el)=>{ return el.y; }),
+        wnd: arr_wind_speed.map((el)=>{ return el.y; }),
+        // arr_pressure.map((el)=>{ return el.y; }),
+        // arr_humidity.map((el)=>{ return el.y; }),
+        // arr_phenomenon_name.map((el)=>{ return el.y; }),
       };
-      if (detailes) {
-        result.arr_pressure = arr_pressure;
-        result.arr_humidity = arr_humidity;
-        result.arr_phenomenon_name = arr_phenomenon_name;
+      if (details) {
+        result.p = arr_pressure.map((el)=>{ return el.y; });
+        result.h = arr_humidity.map((el)=>{ return el.y; });
+        result.n = arr_phenomenon_name.map((el)=>{ return el.y; });
       }
 
       res.json(result);
