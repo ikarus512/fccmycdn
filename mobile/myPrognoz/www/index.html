@@ -6,7 +6,7 @@
 
     <meta
       http-equiv='Content-Security-Policy'
-      content="default-src 'self' data: gap: 'unsafe-eval';                                        script-src   'self' http://localhost:*;                                                    connect-src  'self' https://ikarus512-fccmycdn.herokuapp.com http://localhost:* ws://localhost:*;                                                                        style-src 'self' 'unsafe-inline';                                                            media-src *;                                                                                 img-src 'self' data: content: ;">
+      content="default-src 'self' data: gap: 'unsafe-eval';                                        script-src   'self' http://localhost:*;                                                    connect-src  'self' https://ikarus512-fccmycdn.herokuapp.com http://ikarus512-fccmycdn.herokuapp.com http://localhost:* ws://localhost:*;                                                                        style-src 'self' 'unsafe-inline';                                                            media-src *;                                                                                 img-src 'self' data: content: ;">
 
     <title></title>
 
@@ -35,6 +35,7 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="lib/d3.v4.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.module.js"></script>
     <script src="js/controllers/app.js"></script>
@@ -42,6 +43,8 @@
     <script src="js/controllers/cities.js"></script>
     <script src="js/services/rest.js"></script>
     <script src="js/components/my-calendar.js"></script>
+    <script src="js/components/my-chart.js"></script>
+
   </head>
 
   <body ng-app="starter">

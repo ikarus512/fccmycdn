@@ -27,6 +27,31 @@ angular.module('starter.controllers')
 
     // Table header (keys of first long data)
     $scope.dataKeys = Object.keys($scope.data[0]);
+
+
+    var x = d.x.map(function(e){return new Date(e);});
+    var d1 = { x: x, stocks: {
+        t: { id: 't', values: d.t.map(function(e,i){return {x:x[i],y:e};}), },
+        ver: { id: 'ver/10', values: d.ver.map(function(e,i){return {x:x[i],y:e/10};}), },
+        val: { id: 'val', values: d.val.map(function(e,i){return {x:x[i],y:e};}), },
+        wnd: { id: 'wnd', values: d.wnd.map(function(e,i){return {x:x[i],y:e};}), },
+      }
+    };
+
+    $scope.datat = { x: x, stocks: {
+        t: { id: 't', values: d.t.map(function(e,i){return {x:x[i],y:e};}), },
+      }
+    };
+    $scope.data1 = { x: x, stocks: {
+        ver: { id: 'ver/10', values: d.ver.map(function(e,i){return {x:x[i],y:e/10};}), },
+        val: { id: 'val', values: d.val.map(function(e,i){return {x:x[i],y:e};}), },
+      }
+    };
+    $scope.data2 = { x: x, stocks: {
+        wnd: { id: 'wnd', values: d.wnd.map(function(e,i){return {x:x[i],y:e};}), },
+      }
+    };
+
   })
   .catch( function(res) {console.log(res);});
 

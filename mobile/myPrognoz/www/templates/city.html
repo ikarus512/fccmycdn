@@ -2,23 +2,33 @@
   <ion-content>
     <h3>{{cityTitle}}</h3>
 
-    {{data}}
+    <!-- {{data}} -->
 
     <!-- //////////////////////////////////////////////////// -->
 
     <my-calendar></my-calendar>
+    <hr />
 
-    <hr /> <!-- //////////////////////////////////////////////////// -->
+    <ion-scroll direction="x" style="width: 90%; height: 900px; border:1px solid black;">
+      <my-chart data='datat' style='width:600px;height:300px;'></my-chart>
+      <my-chart data='data1' style='width:600px;height:300px;'></my-chart>
+      <my-chart data='data2' style='width:600px;height:300px;'></my-chart>
+    </ion-scroll>
+    <hr />
+
+    <!-- //////////////////////////////////////////////////// -->
 
     <table>
       <tr>
-        <th ng-repeat='th in dataKeys' style='border:1px solid black;'>
+        <th
+          ng-repeat='th in dataKeys'
+          style='border:1px solid black;'
+        >
           {{th}}
         </th>
       </tr>
       <tr ng-repeat='tr in data'>
         <td
-          ng-show='tr.ver'
           ng-repeat='td in tr'
           style='border:1px solid black;'
           ng-style='tr.ch=="0:00"?{"border-top-width":"3px"}:{}'

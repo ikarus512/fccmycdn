@@ -71,7 +71,7 @@ router
         x: x,
         t: arr_temperature.map((el)=>{ return el.y; }),
         val: arr_precip_val.map((el)=>{ return el.y; }),
-        ver: arr_precip_ver.map((el)=>{ return el.y; }),
+        ver: arr_precip_ver.map((el)=>{ return el.y?el.y:0; }),
         wnd: arr_wind_speed.map((el)=>{ return el.y; }),
         // arr_pressure.map((el)=>{ return el.y; }),
         // arr_humidity.map((el)=>{ return el.y; }),

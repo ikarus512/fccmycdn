@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="main.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<h1>React 04. Game of life. Opt2 jQ.</h1>
+
+  <div classname='row'>
+    <canvas id='myCanvas'
+      width=10 height=10
+      onClick='a.clickLive(event);'>
+    </canvas>
+  </div>
+  <button class='col-xs-2 col-xs-offset-1 btn btn-primary' onClick='a.randomizeCells();'>
+    Rand
+  </button>
+  <button id='pause' class='col-xs-2 btn btn-primary' onClick='a.pauseRun();'>Run</button>
+  <button class='col-xs-2 btn btn-primary' onClick='a.clearCells();'>
+    Clear
+  </button>
+  <label class='label label-default col-xs-2'> Generation: <br/>
+    <span id='generation' class="badge" style='font-size:13px;background-color:#600;'>0</span>
+  </label>
+  <label class='label label-default col-xs-2'> FPS: <br/>
+    <span id='fps' class="badge" style='font-size:13px;background-color:#600;'>0</span>
+  </label>

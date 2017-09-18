@@ -8,6 +8,7 @@ angular.module('starter', [
   'ionic',
   'starter.controllers',
   'components.my-calendar',
+  'components.my-chart',
 ])
 
 .run(function($ionicPlatform) {
@@ -65,7 +66,7 @@ angular.module('starter', [
     }
   })
 
-  .state('app.single', {
+  .state('app.city', {
     url: '/cities/:cityTitle',
     views: {
       'menuContent': {

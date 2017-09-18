@@ -1,0 +1,74 @@
+body {
+  color: white;
+  background-color: black;
+}
+body * {
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.center {
+  text-align: center;
+}
+
+
+.wall {
+  background-color: grey;
+  background-image: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/wall_cells.png');
+}
+
+.floor {
+  background-color: white;
+}
+
+.player {
+  background-color: white;
+  background-image: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/cell_leucocitel.png');
+}
+
+.enemy {
+  background-color: white;
+  background-image: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/virus.png');
+}
+
+.boss {
+  background-color: red;
+}
+.boss1{ background: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/bacilla.png') 0 0;}
+.boss2{ background: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/bacilla.png') -16px 0;}
+.boss3{ background: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/bacilla.png') 0 -16px;}
+.boss4{ background: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/bacilla.png') -16px -16px;}
+
+.injection {
+  background-color: white;
+  background-image: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/injection.png');
+}
+
+.health {
+  background-color: white;
+  background-image: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/pill.png');
+}
+
+.door {
+  background-color: white;
+  background-image: url('https://ikarus512-fccmycdn.herokuapp.com/roguelikegame/img/door.png');
+}
+
+.dark {
+  background-color: black;
+  background-image: none;
+}
+
+
+.tile {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.row {
+  box-sizing: border-box;
+  height: 16px;
+  margin: 0px;
+}
